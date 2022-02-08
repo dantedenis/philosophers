@@ -35,7 +35,7 @@ $(OBJ_PATH)%.o : $(SRC_PATH)%.c $(HEADERS)
 	$(CC) $(FLAGS) -I ./inc -c $< -o $@
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
 	rm -rf $(NAME)
