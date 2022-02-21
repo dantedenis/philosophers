@@ -12,10 +12,8 @@ int main(int argc, char **argv)
 		philo_start(&info);
 		pthread_create(&monitor, NULL, monitoring, &info);
 		pthread_join(monitor, NULL);
+		return (0);
 	}
-	else
-	{
-		write(2, "Error args\n", 11);
-		return (1);
-	}
+	write(2, "Error args\n", 11);
+	return (1);
 }
