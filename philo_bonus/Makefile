@@ -1,32 +1,29 @@
 ###### MAIN ATTRIBUTES #####
 
-NAME = philo
-CC = clang
-FLAGS = -Wextra -Wall -Werror -g
+NAME	= philo
+CC		= gcc
+FLAGS	= -Wextra -Wall -Werror -pthread -g
+HEADERS	= ./inc/philosophers.h
 
 ###### SOURCE FILES #####
 
-OBJ_PATH = ./bin/
-SRC_PATH = ./src/
-
-SRC_LST = main.c	utils.c	action.c	init.c	
-
-SRC = $(addprefix $(SRC_PATH), $(SRC_LST))
-
-###### HEADERS FILES #####
-
-HEADERS = ./inc/philosophers.h
+SRC_PATH	=	./src/
+SRC_LIST	=	main.c		utils.c		action.c\
+				init.c		routing.c
 
 ###### OBJECT FILES #####
 
-OBJ		= $(addprefix $(OBJ_PATH), $(patsubst %.c,%.o,$(SRC_LST)))
+OBJ_PATH	= ./bin/
+OBJ			= $(addprefix $(OBJ_PATH), $(patsubst %.c, %.o, $(SRC_LIST)))
+
+###### BUILDER #####
 
 .PHONY : all clean fclean re
 
 all : $(OBJ_PATH) $(NAME)
 
 $(OBJ_PATH):
-	mkdir -p $(OBJ_PATH)
+	mkdir $(OBJ_PATH)
 
 $(NAME) : $(OBJ)
 	$(CC) $(OBJ) -o $@
