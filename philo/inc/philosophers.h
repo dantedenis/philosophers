@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <sys/time.h>
+# include <string.h>
 
 # define LINE "\n-------------------------------------------------\n"
 # define IS_DIE "\033[31mis die\033[0m"
@@ -44,7 +45,7 @@ typedef struct s_info
 {
 	int			count_philo;
 	uint64_t	time_to_die;
-	uint64_t	time_to_eat;
+	int			time_to_eat;
 	uint64_t	time_to_sleep;
 	int			times_eat;
 	t_pth_mut	*forks;

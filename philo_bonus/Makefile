@@ -1,15 +1,15 @@
 ###### MAIN ATTRIBUTES #####
 
-NAME	= philo
+NAME	= philo_bonus
 CC		= gcc
 FLAGS	= -Wextra -Wall -Werror -pthread -g
-HEADERS	= ./inc/philosophers.h
+HEADERS	= ./inc/philosophers_bonus.h
 
 ###### SOURCE FILES #####
 
 SRC_PATH	=	./src/
-SRC_LIST	=	main.c		utils.c		action.c\
-				init.c		routing.c
+SRC_LIST	=	main_bonus.c		utils_bonus.c		action_bonus.c\
+				init_bonus.c		routing_bonus.c
 
 ###### OBJECT FILES #####
 

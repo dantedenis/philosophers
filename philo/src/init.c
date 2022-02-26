@@ -33,6 +33,7 @@ void	free_all(t_info *info)
 
 void	read_arg(char **str, t_info *i)
 {
+	memset(i, 0, sizeof(t_info));
 	i->count_philo = ft_atoi(str[1]);
 	i->time_to_die = ft_atoi(str[2]);
 	i->time_to_eat = ft_atoi(str[3]);
